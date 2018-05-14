@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-incrementador',
@@ -7,20 +7,39 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class IncrementadorComponent implements OnInit {
 
+
+  @ViewChild('txtProgress') txtProgress: ElementRef;
+
   // tslint:disable-next-line:no-input-rename
   @Input('nombre') leyenda = 'Leyenda';
+  @Input() progreso = 50;
 
-  // tslint:disable-next-line:no-inferrable-types
-  @Input() progreso: number = 50;
+  @Output() cambioValor: EventEmitter<number> = new EventEmitter();
 
   constructor() {
     // console.log ( 'leyenda', this.leyenda );
-    console.log ( 'progreso', this.progreso);
+    // console.log ( 'progreso', this.progreso);
   }
 
   ngOnInit() {
     // console.log ( 'leyenda', this.leyenda );
-    console.log ( 'progreso', this.progreso);
+    // console.log ( 'progreso', this.progreso);
+  }
+
+  onChanges(newValue: number) {
+
+
+    if ( newValue >= 100 ) {
+      this.progreso = 100;
+    } else if ( newValue <= 0 ) {
+      this.progreso = 0;
+    } else {
+      this.progreso = newValue;
+    }
+
+    this.txtProgress.nativeElement.value = this.progreso;
+
+    this.cambioValor.emit(this.progreso);
   }
 
   cambiarValor ( valor ) {
@@ -35,6 +54,10 @@ export class IncrementadorComponent implements OnInit {
       return;
     }
     this.progreso = this.progreso + valor;
+
+    this.cambioValor.emit(this.progreso);
+
+    this.txtProgress.nativeElement.focus();
   }
 
 }

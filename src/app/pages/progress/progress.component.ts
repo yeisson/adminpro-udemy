@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class ProgressComponent implements OnInit {
 
   // tslint:disable-next-line:no-inferrable-types
-  progreso: number = 50;
+  progreso1: number = 20;
+  progreso2 = 30;
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
 
 }
