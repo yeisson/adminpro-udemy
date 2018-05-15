@@ -17,6 +17,7 @@ import { ChartsModule } from 'ng2-charts';
 // Temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { CharDonutComponent } from '../components/char-donut/char-donut.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { CharDonutComponent } from '../components/char-donut/char-donut.componen
         ProgressComponent,
         Graficas1Component,
         IncrementadorComponent,
-        CharDonutComponent
+        CharDonutComponent,
+        AccountSettingsComponent
     ],
     exports: [
         PagesComponent,
