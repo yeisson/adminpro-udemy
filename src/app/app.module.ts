@@ -8,7 +8,9 @@ import { APP_ROUTES } from './app.routes';
 import { PageModule } from './pages/pages.module';
 
 // Servicios
-import { SettingsService } from './services/settings.service';
+import { SettingsService } from './services/service.index';
+import { ServiceModule } from './services/service.module';
+
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -30,9 +32,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     APP_ROUTES,
     PageModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
-  providers: [SettingsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
