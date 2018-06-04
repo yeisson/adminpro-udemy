@@ -18,13 +18,14 @@ import { PipesModule } from '../pipes/pipes.module';
 // n2-charts
 import { ChartsModule } from 'ng2-charts';
 
-// Temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { CharDonutComponent } from '../components/char-donut/char-donut.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 
 @NgModule({
@@ -38,7 +39,9 @@ import { ProfileComponent } from './profile/profile.component';
         AccountSettingsComponent,
         PromesasComponent,
         RxjsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsuariosComponent,
+        ModalUploadComponent
     ],
     exports: [
         PagesComponent,
