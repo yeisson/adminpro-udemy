@@ -7,7 +7,8 @@ import {
   SharedService,
   UsuarioService,
   LoginGuardGuard,
-  SubirArchivoService
+  SubirArchivoService,
+  HospitalService
 } from './service.index';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +24,7 @@ import { ModalUploadService } from '../components/modal-upload/modal-upload.serv
     SidebarService,
     SharedService,
     UsuarioService,
+    HospitalService,
     LoginGuardGuard,
     SubirArchivoService,
     ModalUploadService
