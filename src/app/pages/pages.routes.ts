@@ -7,7 +7,7 @@ import { Graficas1Component } from './graficas1/graficas1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
-import { LoginGuardGuard } from '../services/service.index';
+import { LoginGuardGuard, AdminGuard } from '../services/service.index';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
@@ -31,7 +31,13 @@ const pagesRoutes: Routes = [
             { path: 'perfil', component: ProfileComponent, data: { titulo: 'Perfil de usuario'}},
 
             // Mantenimientos
-            { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Mantenimiento de Usuarios'}},
+            {
+                path: 'usuarios',
+                component: UsuariosComponent,
+                canActivate: [ AdminGuard ],
+                data: { titulo: 'Mantenimiento de Usuarios'}
+            },
+
             { path: 'hospitales', component: HospitalesComponent, data: { titulo: 'Mantenimiento de Hospitales'}},
             { path: 'medicos', component: MedicosComponent, data: { titulo: 'Mantenimiento de Médicos'}},
             { path: 'medico/:id', component: MedicoComponent, data: { titulo: 'Actualizar Médico'}},

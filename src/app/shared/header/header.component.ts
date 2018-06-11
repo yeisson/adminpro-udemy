@@ -17,4 +17,8 @@ export class HeaderComponent implements OnInit {
     this.usuario = this._usuarioService.usuario;
   }
 
+  mostrarBusqueda( termino: string ) {
+    console.log(  termino );
+  }
+
 }
